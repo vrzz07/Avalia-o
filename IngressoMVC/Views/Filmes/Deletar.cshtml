@@ -1,0 +1,31 @@
+﻿@model Filme
+
+@{
+    ViewData["Title"] = "Deletar Filme";
+}
+
+<div class="row text">
+    <div class="col-md-8 offset-2">
+        <p>
+            <h1>Deletar Filme @Model.Titulo</h1>
+        </p>
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <div class="form-group">
+                    <label asp-for="Titulo" class="control-label"></label>
+                    <input asp-for="Titulo" class="form-control" />
+                    <span asp-validation-for="Titulo" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <form asp-action="Deletar">
+                        <input type="hidden" asp-for="Id" />
+                        <input type="submit" value="Confirmar" class="btn btn-outline-danger float-right" />
+                    </form>
+                    <a class="btn btn-outline-secondary" asp-action="Index">Listar Todos</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
